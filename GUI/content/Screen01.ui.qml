@@ -27,7 +27,7 @@ Rectangle {
         y: 0
         width: 1237
         height: 165
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
 
         Label {
@@ -171,7 +171,7 @@ Rectangle {
         y: 159
         width: 1237
         height: 175
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
         Label {
             id: sun_az_label
@@ -313,7 +313,7 @@ Rectangle {
         y: 329
         width: 1237
         height: 71
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
 
         Text {
@@ -336,17 +336,27 @@ Rectangle {
         y: 393
         width: 1237
         height: 197
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
+
+        Image {
+            id: label
+            x: 5
+            y: -2
+            width: 1228
+            height: 206
+            source: "../imports/Automatic-Stow-Functions.jpg"
+            fillMode: Image.PreserveAspectFit
+        }
     }
 
     Rectangle {
         id: tracker_status_label
         x: 0
         y: 586
-        width: 1237
+        width: 1150
         height: 71
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
         Text {
             id: tracker_status_label_1
@@ -366,17 +376,56 @@ Rectangle {
         id: tracker_status
         x: 0
         y: 652
-        width: 1237
+        width: 1150
         height: 428
-        color: "#00cdff"
+        color: "#00afee"
         border.width: 5
+
+        Image {
+            id: image
+            x: -457
+            y: 2
+            width: 2065
+            height: 420
+            source: "../imports/Tracker-Status.jpg"
+            fillMode: Image.PreserveAspectFit
+        }
+    }
+
+    Rectangle {
+        id: spacer_label
+        x: 1147
+        y: 586
+        width: 90
+        height: 494
+        color: "#00afee"
+        border.width: 5
+    }
+
+    Rectangle {
+        id: drop_down_menu
+        x: 1233
+        y: 0
+        width: 687
+        height: 477
+        color: "#e7e5e6"
+        border.width: 5
+
+        Image {
+            id: image1
+            x: -26
+            y: 5
+            width: 737
+            height: 469
+            source: "../imports/command_window.png"
+            fillMode: Image.PreserveAspectFit
+        }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.5;height:1080;width:1920}D{i:10}D{i:11}D{i:12}D{i:13}D{i:14}
-D{i:15}D{i:29}D{i:31}D{i:32}D{i:34}
+    D{i:0;formeditorZoom:0.66;height:1080;width:1920}D{i:37}D{i:38}
 }
 ##^##*/
 

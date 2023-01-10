@@ -40,6 +40,7 @@ Window {
 
     Screen01 {
         id: mainScreen
+        color: "#ffffff"
     }
 
 }
