@@ -343,10 +343,130 @@ Rectangle {
             id: label
             x: 5
             y: -2
-            width: 1228
+            width: 1230
             height: 206
             source: "../imports/Automatic-Stow-Functions.jpg"
             fillMode: Image.PreserveAspectFit
+
+            Text {
+                id: wind_port
+                x: 328
+                y: 61
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: temp_port
+                x: 328
+                y: 109
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: aux_port
+                x: 328
+                y: 155
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: wind_status
+                x: 583
+                y: 61
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: temp_status
+                x: 583
+                y: 109
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: aux_status
+                x: 583
+                y: 155
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: wind_stow_delay
+                x: 831
+                y: 61
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: temp_stow_delay
+                x: 831
+                y: 109
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: aux_stow_delay
+                x: 831
+                y: 155
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: wind_rec_delay
+                x: 1076
+                y: 61
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: temp_rec_delay
+                x: 1076
+                y: 109
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: aux_rec_delay
+                x: 1076
+                y: 155
+                color: "#ff0000"
+                text: "00.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
         }
     }
 
@@ -382,13 +502,193 @@ Rectangle {
         border.width: 5
 
         Image {
-            id: image
+            id: tracker_status_image
             x: -457
             y: 2
             width: 2065
             height: 420
             source: "../imports/Tracker-Status.jpg"
             fillMode: Image.PreserveAspectFit
+
+            Text {
+                id: curr_status
+                x: 1179
+                y: 8
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: azimuth_label
+                x: 984
+                y: 54
+                color: "#ff0000"
+                text: "Azimuth"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: com_position_az
+                x: 995
+                y: 103
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: act_position_az
+                x: 994
+                y: 149
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: pos_error_az
+                x: 995
+                y: 194
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: offset_az
+                x: 994
+                y: 240
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: elevation_label
+                x: 1380
+                y: 54
+                color: "#ff0000"
+                text: "Elevation"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: com_position_el
+                x: 1380
+                y: 103
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: act_position_el
+                x: 1379
+                y: 149
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: pos_error_el
+                x: 1380
+                y: 194
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: offset_el
+                x: 1379
+                y: 240
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: min_update
+                x: 1177
+                y: 288
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: motor_status_az
+                x: 995
+                y: 334
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: motor_status_el
+                x: 1370
+                y: 334
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: limit_switch_status_ea_az
+                x: 891
+                y: 380
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: limit_switch_status_dn_az
+                x: 1082
+                y: 380
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: limit_switch_status_ea_el
+                x: 1285
+                y: 380
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
+
+            Text {
+                id: limit_switch_status_dn_el
+                x: 1476
+                y: 380
+                color: "#ff0000"
+                text: "000.00"
+                font.pixelSize: 24
+                font.bold: true
+            }
         }
     }
 
@@ -403,7 +703,7 @@ Rectangle {
     }
 
     Rectangle {
-        id: drop_down_menu
+        id: drop_down_menu_window
         x: 1233
         y: 0
         width: 687
@@ -413,19 +713,170 @@ Rectangle {
 
         Image {
             id: image1
-            x: -26
+            x: -22
             y: 5
-            width: 737
+            width: 733
             height: 469
             source: "../imports/command_window.png"
             fillMode: Image.PreserveAspectFit
+        }
+    }
+
+    Rectangle {
+        id: emergency_wind_stow_window
+        x: 1233
+        y: 474
+        width: 687
+        height: 69
+        color: "#e6e5e5"
+        border.width: 5
+
+        Button {
+            id: emercency_wind_stow
+            x: 180
+            y: 16
+            width: 327
+            height: 37
+            text: qsTr("Emergency Wind Stow")
+            icon.color: "#ff0000"
+            highlighted: true
+            font.bold: true
+            font.pointSize: 18
+        }
+    }
+
+    Rectangle {
+        id: enter_command_window
+        x: 1233
+        y: 539
+        width: 687
+        height: 69
+        color: "#d53715f7"
+        border.width: 5
+
+        Text {
+            id: enter_command_label
+            x: 28
+            y: 19
+            color: "#ffffff"
+            text: qsTr("Enter Command:")
+            font.pixelSize: 23
+            font.bold: true
+        }
+    }
+
+    Rectangle {
+        id: command_window
+        x: 1233
+        y: 604
+        width: 687
+        height: 111
+        color: "#d53715f7"
+        border.width: 5
+
+        TextInput {
+            id: command_input
+            x: 29
+            y: 8
+            width: 634
+            height: 76
+            color: "#ffffff"
+            text: qsTr(">")
+            font.pixelSize: 18
+            font.bold: true
+        }
+    }
+
+    Rectangle {
+        id: error_message_label_window
+        x: 1233
+        y: 712
+        width: 687
+        height: 59
+        color: "#d53715f7"
+        border.width: 5
+        Text {
+            id: error_message_label
+            x: 28
+            y: 14
+            color: "#ffffff"
+            text: qsTr("Error Message:")
+            font.pixelSize: 23
+            font.bold: true
+        }
+    }
+
+    Rectangle {
+        id: error_message_window
+        x: 1233
+        y: 767
+        width: 687
+        height: 104
+        color: "#d53715f7"
+        border.width: 5
+
+        Text {
+            id: error_message
+            x: 25
+            y: 8
+            color: "#ddf634"
+            text: qsTr("ERROR: Command Cannot Be Executed")
+            font.pixelSize: 23
+            font.bold: true
+        }
+    }
+
+    Rectangle {
+        id: batch_file_window
+        x: 1233
+        y: 868
+        width: 687
+        height: 212
+        color: "#e6e5e5"
+        border.width: 5
+        Button {
+            id: upload_batch_file
+            x: 77
+            y: 72
+            width: 223
+            height: 37
+            text: qsTr("Upload Batch File")
+            font.pointSize: 18
+            highlighted: true
+            font.bold: true
+            icon.color: "#ff0000"
+        }
+
+        Button {
+            id: upload_batch_file1
+            x: 404
+            y: 72
+            width: 191
+            height: 37
+            text: qsTr("Run Batch File")
+            font.pointSize: 18
+            highlighted: true
+            icon.color: "#ff0000"
+            font.bold: true
+        }
+
+        Text {
+            id: text1
+            x: 77
+            y: 116
+            width: 120
+            height: 22
+            text: qsTr("Uploaded: ")
+            font.pixelSize: 16
         }
     }
 }
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.66;height:1080;width:1920}D{i:37}D{i:38}
+    D{i:0;formeditorZoom:0.5;height:1080;width:1920}D{i:33}D{i:34}D{i:35}D{i:49}D{i:50}
+D{i:51}D{i:54}D{i:60}D{i:61}D{i:62}D{i:63}D{i:64}D{i:70}D{i:72}D{i:74}D{i:79}D{i:82}
+D{i:80}
 }
 ##^##*/
 
