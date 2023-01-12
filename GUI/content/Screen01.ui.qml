@@ -722,6 +722,7 @@ Rectangle {
 
             ComboBox {
                 id: drop_down_menu
+                displayText: "SELECT OPTION"
                 editable: true
                 model: ListModel {
                     id: model
@@ -744,9 +745,6 @@ Rectangle {
                         text: "SELF-ALIGN"
                     }
                     ListElement {
-                        text: "WORK STOW"
-                    }
-                    ListElement {
                         text: "GO TO POSITION"
                     }
                     ListElement {
@@ -757,8 +755,8 @@ Rectangle {
                 y: 75
                 width: 365
                 height: 60
+                flat: false
                 font.bold: true
-                displayText: "SELECT OPTION"
                 font.pointSize: 18
             }
         }
@@ -912,6 +910,41 @@ Rectangle {
             font.pixelSize: 16
         }
     }
+    states: [
+        State {
+            name: "HALT"
+            when: (drop_down_menu.currentText == "HALT")
+                  && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "EMSL"
+            when: (drop_down_menu.currentText == "EMSL") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "TRACK SUN"
+            when: (drop_down_menu.currentText == "TRACK SUN") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "HELIOSTAT"
+            when: (drop_down_menu.currentText == "HELIOSTAT") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "STOW"
+            when: (drop_down_menu.currentText == "STOW") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "SELF-ALIGN"
+            when: (drop_down_menu.currentText == "SELF-ALIGN") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "GO TO POSITION"
+            when: (drop_down_menu.currentText == "GO TO POSITION") && (drop_down_menu.currentTextChanged)
+        },
+        State {
+            name: "HELP"
+            when: (drop_down_menu.currentText == "HELP") && (drop_down_menu.currentTextChanged)
+        }
+    ]
 }
 
 /*##^##
