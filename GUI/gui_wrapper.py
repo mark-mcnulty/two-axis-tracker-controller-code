@@ -11,6 +11,7 @@ engine.load('main.qml')
 
 curr_date = "11/29/2022"
 
-engine.rootObjects()[0].setProperty('currDate', curr_date)
+print(engine.rootObjects())
+# # engine.rootObjects()[0].setProperty('currDate', curr_date)
 
 sys.exit(app.exec())

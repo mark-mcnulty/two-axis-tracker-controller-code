@@ -572,7 +572,7 @@ Rectangle {
 
             Text {
                 id: elevation_label
-                x: 1380
+                x: 1356
                 y: 54
                 color: "#ff0000"
                 text: "Elevation"
@@ -582,8 +582,8 @@ Rectangle {
 
             Text {
                 id: com_position_el
-                x: 1380
-                y: 103
+                x: 1369
+                y: 100
                 color: "#ff0000"
                 text: "000.00"
                 font.pixelSize: 24
@@ -592,7 +592,7 @@ Rectangle {
 
             Text {
                 id: act_position_el
-                x: 1379
+                x: 1368
                 y: 149
                 color: "#ff0000"
                 text: "000.00"
@@ -602,7 +602,7 @@ Rectangle {
 
             Text {
                 id: pos_error_el
-                x: 1380
+                x: 1369
                 y: 194
                 color: "#ff0000"
                 text: "000.00"
@@ -612,7 +612,7 @@ Rectangle {
 
             Text {
                 id: offset_el
-                x: 1379
+                x: 1368
                 y: 240
                 color: "#ff0000"
                 text: "000.00"
@@ -719,6 +719,48 @@ Rectangle {
             height: 469
             source: "../imports/command_window.png"
             fillMode: Image.PreserveAspectFit
+
+            ComboBox {
+                id: drop_down_menu
+                editable: true
+                model: ListModel {
+                    id: model
+                    ListElement {
+                        text: "HALT"
+                    }
+                    ListElement {
+                        text: "EMSL"
+                    }
+                    ListElement {
+                        text: "TRACK SUN"
+                    }
+                    ListElement {
+                        text: "HELIOSTAT"
+                    }
+                    ListElement {
+                        text: "STOW"
+                    }
+                    ListElement {
+                        text: "SELF-ALIGN"
+                    }
+                    ListElement {
+                        text: "WORK STOW"
+                    }
+                    ListElement {
+                        text: "GO TO POSITION"
+                    }
+                    ListElement {
+                        text: "HELP"
+                    }
+                }
+                x: 47
+                y: 75
+                width: 365
+                height: 60
+                font.bold: true
+                displayText: "SELECT OPTION"
+                font.pointSize: 18
+            }
         }
     }
 
@@ -861,7 +903,7 @@ Rectangle {
         }
 
         Text {
-            id: text1
+            id: file_upload
             x: 77
             y: 116
             width: 120
@@ -874,9 +916,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.5;height:1080;width:1920}D{i:33}D{i:34}D{i:35}D{i:49}D{i:50}
-D{i:51}D{i:54}D{i:60}D{i:61}D{i:62}D{i:63}D{i:64}D{i:70}D{i:72}D{i:74}D{i:79}D{i:82}
-D{i:80}
+    D{i:0;formeditorZoom:0.5;height:1080;width:1920}
 }
 ##^##*/
 
