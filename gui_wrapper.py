@@ -6,6 +6,6 @@ if __name__ == "__main__":
     app = QApplication()
     view = QQuickView()
 
-    view.setSource("content\Screen01.qml")
+    view.setSource("Screen01.qml")
     view.show()
     sys.exit(app.exec())

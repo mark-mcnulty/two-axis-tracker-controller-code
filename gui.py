@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\zachs\two-axis-tracker-controller-code\GUI\content\Screen01.ui.qml'
+# Form implementation generated from reading ui file 'C:\Users\zachs\two-axis-tracker-controller-code\GUI\content\Screen01.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
