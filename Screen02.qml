@@ -4,7 +4,7 @@ import QtQuick.Controls 2.15
 ApplicationWindow {
     visible: true
     width: 1920
-    height: 1080
+    height: 1079
     title: "Application Window"
     property string currDate: "00:00:00"
     property string currTime: "00:00:00"
