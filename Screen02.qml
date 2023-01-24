@@ -181,7 +181,7 @@ ApplicationWindow {
             Label {
                 id: sun_el_label
                 x: 31
-                y: 90
+                y: 50
                 text: qsTr("Sun Elevation:")
                 font.bold: true
                 font.family: "Arial"
@@ -191,7 +191,7 @@ ApplicationWindow {
             Label {
                 id: air_mass_label
                 x: 31
-                y: 128
+                y: 83
                 text: qsTr("Air Mass:")
                 font.bold: true
                 font.family: "Arial"
@@ -204,7 +204,7 @@ ApplicationWindow {
                 width: 382
                 height: 84
                 text: qsTr("Sun/Air \nParameters:")
-                font.pixelSize: 30
+                font.pixelSize: 26
                 horizontalAlignment: Text.AlignHCenter
                 font.family: "Arial"
                 font.bold: true
@@ -213,7 +213,7 @@ ApplicationWindow {
             Label {
                 id: sunrise_label
                 x: 870
-                y: 51
+                y: 18
                 text: qsTr("Sunrise:")
                 font.bold: true
                 font.family: "Arial"
@@ -223,7 +223,7 @@ ApplicationWindow {
             Label {
                 id: solar_noon_label
                 x: 870
-                y: 90
+                y: 50
                 text: qsTr("Solar Noon:")
                 font.bold: true
                 font.family: "Arial"
@@ -233,7 +233,7 @@ ApplicationWindow {
             Label {
                 id: sunset_label
                 x: 870
-                y: 128
+                y: 83
                 text: qsTr("Sunset:")
                 font.bold: true
                 font.family: "Arial"
@@ -242,8 +242,8 @@ ApplicationWindow {
 
             Text {
                 id: sunrise
-                x: 995
-                y: 54
+                x: 972
+                y: 18
                 color: "#ff0000"
                 text: "00:00:00"
                 font.pixelSize: 24
@@ -252,8 +252,8 @@ ApplicationWindow {
 
             Text {
                 id: solar_noon
-                x: 1043
-                y: 93
+                x: 1012
+                y: 50
                 color: "#ff0000"
                 text: "00:00:00"
                 font.pixelSize: 24
@@ -262,8 +262,8 @@ ApplicationWindow {
 
             Text {
                 id: sunset
-                x: 985
-                y: 132
+                x: 962
+                y: 83
                 color: "#ff0000"
                 text: "00:00:00"
                 font.pixelSize: 24
@@ -272,8 +272,8 @@ ApplicationWindow {
 
             Text {
                 id: sun_az
-                x: 227
-                y: 55
+                x: 192
+                y: 18
                 color: "#ff0000"
                 text: "000.00"
                 font.pixelSize: 24
@@ -282,8 +282,8 @@ ApplicationWindow {
 
             Text {
                 id: sun_el
-                x: 242
-                y: 94
+                x: 207
+                y: 50
                 color: "#ff0000"
                 text: "00.00"
                 font.pixelSize: 24
@@ -292,8 +292,8 @@ ApplicationWindow {
 
             Text {
                 id: air_mass
-                x: 175
-                y: 133
+                x: 145
+                y: 83
                 color: "#ff0000"
                 text: "0.00"
                 font.pixelSize: 24
@@ -303,7 +303,7 @@ ApplicationWindow {
         Rectangle {
             id: automatic_stow_functions_title
             x: 0
-            y: 329
+            y: 250
             width: 1237
             height: 71
             color: "#00afee"
@@ -326,7 +326,7 @@ ApplicationWindow {
         Rectangle {
             id: automatic_stow_functions
             x: 0
-            y: 393
+            y: 316
             width: 1237
             height: 197
             color: "#00afee"
@@ -466,7 +466,7 @@ ApplicationWindow {
          Rectangle {
             id: tracker_status_label
             x: 0
-            y: 586
+            y: 509
             width: 1150
             height: 71
             color: "#00afee"
@@ -488,9 +488,9 @@ ApplicationWindow {
         Rectangle {
             id: tracker_status
             x: 0
-            y: 652
+            y: 575
             width: 1150
-            height: 428
+            height: 430
             color: "#00afee"
             border.width: 5
 
@@ -685,6 +685,347 @@ ApplicationWindow {
                 }
             }
         }
-    }
 
+        Rectangle {
+            id: drop_down_menu_window
+            x: 1233
+            y: 0
+            width: 687
+            height: 477
+            color: "#e7e5e6"
+            border.width: 5
+
+            Image {
+                id: image1
+                x: 3
+                y: 4
+                width: 683
+                height: 472
+                source: "../two-axis-tracker-controller-code/images/command_window.png"
+                fillMode: Image.PreserveAspectFit
+
+                ComboBox {
+                    id: drop_down_menu
+                    displayText: "SELECT OPTION"
+                    editable: true
+                    model: ListModel {
+                        id: model
+                        ListElement {
+                            text: "HALT"
+                        }
+                        ListElement {
+                            text: "EMSL"
+                        }
+                        ListElement {
+                            text: "TRACK SUN"
+                        }
+                        ListElement {
+                            text: "HELIOSTAT"
+                        }
+                        ListElement {
+                            text: "STOW"
+                        }
+                        ListElement {
+                            text: "SELF-ALIGN"
+                        }
+                        ListElement {
+                            text: "GO TO POSITION"
+                        }
+                        ListElement {
+                            text: "HELP"
+                        }
+                    }
+                    x: 47
+                    y: 75
+                    width: 365
+                    height: 60
+                    flat: false
+                    font.bold: true
+                    font.pointSize: 18
+                }
+
+                Button {
+                    id: run_command_button
+                    x: 47
+                    y: 416
+                    width: 327
+                    height: 37
+                    text: qsTr("Run Command")
+                    flat: false
+                    font.bold: true
+                    icon.color: "#ff0000"
+                    font.pointSize: 18
+                    highlighted: true
+                }
+
+                TextInput {
+                    id: command_input1
+                    x: 29
+                    y: 8
+                    width: 634
+                    height: 76
+                    color: "#ffffff"
+                    text: qsTr(">")
+                    font.pixelSize: 18
+                    font.bold: true
+                }
+
+                Rectangle {
+                    id: azimuth_input_rect
+                    x: 181
+                    y: 263
+                    width: 181
+                    height: 48
+                    visible: false
+                    color: "#ffffff"
+
+                    TextInput {
+                        id: azimuth_input
+                        x: 8
+                        y: 1
+                        width: 158
+                        height: 48
+                        visible: false
+                        text: qsTr("Text Input")
+                        font.pixelSize: 20
+                        verticalAlignment: Text.AlignVCenter
+                        font.bold: true
+                    }
+                }
+                Rectangle {
+                    id: el_input_rect
+                    x: 181
+                    y: 329
+                    width: 181
+                    height: 48
+                    visible: false
+                    color: "#ffffff"
+                    TextInput {
+                        id: el_input
+                        x: 8
+                        y: 1
+                        width: 158
+                        height: 48
+                        visible: false
+                        text: qsTr("Text Input")
+                        font.pixelSize: 20
+                        verticalAlignment: Text.AlignVCenter
+                        font.bold: true
+                    }
+                }
+
+                Label {
+                    id: azumith_label
+                    x: 41
+                    y: 272
+                    visible: false
+                    text: qsTr("Azimuth:")
+                    font.bold: true
+                    font.family: "Arial"
+                    font.pointSize: 20
+                }
+
+                Label {
+                    id: el_input_label
+                    x: 41
+                    y: 338
+                    visible: false
+                    text: qsTr("Elevation:")
+                    font.bold: true
+                    font.pointSize: 20
+                    font.family: "Arial"
+                }
+                states: State {
+                    name: "Seeking Position"
+                    when: (drop_down_menu.currentText == "HELIOSTAT" || drop_down_menu.currentText == "GO TO POSITION") && (drop_down_menu.currentTextChanged)
+
+                    PropertyChanges {
+                        target: el_input_rect
+                        visible: true
+                    }
+
+                    PropertyChanges {
+                        target: el_input
+                        visible: true
+                    }
+
+                    PropertyChanges {
+                        target: el_input_label
+                        visible: true
+                    }
+
+                    PropertyChanges {
+                        target: azimuth_input_rect
+                        visible: true
+                    }
+
+                    PropertyChanges {
+                        target: azimuth_input
+                        visible: true
+                    }
+
+                    PropertyChanges {
+                        target: azumith_label
+                        visible: true
+                    }
+                }
+            }
+        }
+        Rectangle {
+            id: emergency_wind_stow_window
+            x: 1233
+            y: 474
+            width: 687
+            height: 69
+            color: "#e6e5e5"
+            border.width: 5
+
+            Button {
+                id: emercency_wind_stow
+                x: 180
+                y: 16
+                width: 327
+                height: 37
+                text: qsTr("Emergency Wind Stow")
+                icon.color: "#ff0000"
+                highlighted: true
+                font.bold: true
+                font.pointSize: 18
+            }
+        }
+        Rectangle {
+            id: spacer_label
+            x: 1145
+            y: 510
+            width: 93
+            height: 500
+            color: "#00afee"
+            border.width: 5
+        }
+        Rectangle {
+            id: enter_command_window
+            x: 1233
+            y: 539
+            width: 687
+            height: 69
+            color: "#d53715f7"
+            border.width: 5
+
+            Text {
+                id: enter_command_label
+                x: 28
+                y: 19
+                color: "#ffffff"
+                text: qsTr("Enter Command:")
+                font.pixelSize: 23
+                font.bold: true
+            }
+        }
+
+        Rectangle {
+            id: command_window
+            x: 1233
+            y: 604
+            width: 687
+            height: 111
+            color: "#d53715f7"
+            border.width: 5
+
+            TextInput {
+                id: command_input
+                x: 29
+                y: 8
+                width: 634
+                height: 76
+                color: "#ffffff"
+                text: qsTr("> ")
+                font.pixelSize: 26
+                font.bold: true
+            }
+        }
+
+        Rectangle {
+            id: error_message_label_window
+            x: 1233
+            y: 712
+            width: 687
+            height: 59
+            color: "#d53715f7"
+            border.width: 5
+            Text {
+                id: error_message_label
+                x: 28
+                y: 14
+                color: "#ffffff"
+                text: qsTr("Error Message:")
+                font.pixelSize: 23
+                font.bold: true
+            }
+        }
+
+        Rectangle {
+            id: error_message_window
+            x: 1233
+            y: 767
+            width: 687
+            height: 104
+            color: "#d53715f7"
+            border.width: 5
+
+            Text {
+                id: error_message
+                x: 25
+                y: 8
+                color: "#ddf634"
+                text: qsTr("ERROR: Command Cannot Be Executed")
+                font.pixelSize: 23
+                font.bold: true
+            }
+        }
+        Rectangle {
+            id: batch_file_window
+            x: 1233
+            y: 868
+            width: 687
+            height: 140
+            color: "#e6e5e5"
+            border.width: 5
+            Button {
+                id: upload_batch_file
+                x: 77
+                y: 45
+                width: 250
+                height: 37
+                text: qsTr("Upload Batch File")
+                font.pointSize: 18
+                highlighted: true
+                font.bold: true
+                icon.color: "#ff0000"
+            }
+
+            Button {
+                id: upload_batch_file1
+                x: 404
+                y: 45
+                width: 191
+                height: 37
+                text: qsTr("Run Batch File")
+                font.pointSize: 18
+                highlighted: true
+                icon.color: "#ff0000"
+                font.bold: true
+            }
+
+            Text {
+                id: file_upload
+                x: 77
+                y: 85
+                width: 120
+                height: 22
+                text: qsTr("Uploaded: ")
+                font.pixelSize: 16
+            }
+        }
+    }
+    
 }
