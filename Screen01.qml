@@ -907,8 +907,7 @@ ApplicationWindow {
                 width: 634
                 height: 76
                 color: "#ffffff"
-                text: qsTr(">")
-                font.pixelSize: 18
+                font.pixelSize: 26
                 font.bold: true
             }
         }
