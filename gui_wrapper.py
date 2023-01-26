@@ -5,8 +5,7 @@ from PyQt5.QtCore import QTimer
 import ntplib
 import time
 from time import ctime
-import datetime
-from solar_position import SolarPosition
+from datetime import datetime
 
 TIME_SERVER = "time.google.com"
 SITE_LONGITUDE = 105.19
@@ -24,7 +23,7 @@ def update_time_and_date_az_el():
     ntp_client = ntplib.NTPClient()
     response = ntp_client.request(TIME_SERVER)
     curr_time_str = ctime(response.tx_time)
-    date = datetime.datetime.strptime(curr_time_str, "%a %b %d %H:%M:%S %Y")
+    date = datetime.strptime(curr_time_str, "%a %b %d %H:%M:%S %Y")
     time_list = str(date).split()
     curr_date = str(date.month) + '/' + str(date.day) + '/' + str(date.year)
     curr_time = time_list[1]
@@ -32,19 +31,8 @@ def update_time_and_date_az_el():
     engine.rootObjects()[0].setProperty('currTime', curr_time)
     
     # Azimuth and Elevation
-    year: int = date.year
-    month: int = date.month
-    day: int = date.day
-    hour: int = date.hour
-    minute: int = date.minute
-    second: int = date.second
-    solar_pos_inst = SolarPosition(year, month, day,
-                                    hour, minute, second,
-                                    SITE_LATITUDE, SITE_LONGITUDE, TIME_ZONE)
-    curr_azimuth = solar_pos_inst.SUNAZ
-    curr_elevation = solar_pos_inst.SUNEL
-    engine.rootObjects()[0].setProperty('currAz', str(curr_azimuth))
-    engine.rootObjects()[0].setProperty('currEl', str(curr_elevation))
+    # engine.rootObjects()[0].setProperty('currAz', '%0.6f' % curr_azimuth)
+    # engine.rootObjects()[0].setProperty('currEl', '%0.6f' % curr_elevation)
 
 
 timer = QTimer()
