@@ -8,6 +8,12 @@ ApplicationWindow {
     title: "Application Window"
     property string currDate: "00:00:00"
     property string currTime: "00:00:00"
+    property string timeServer: "00:00:00"
+    property string siteLongitude: "00:00:00"
+    property string siteLatitude: "00:00:00"
+    property string timeZone: "00:00:00"
+    property string currAz: "00:00:00"
+    property string currEl: "00:00:00"
 
     Rectangle {
         id: application_window
@@ -125,37 +131,37 @@ ApplicationWindow {
                 x: 1020
                 y: 83
                 color: "#ff0000"
-                text: "time.server"
+                text: timeServer
                 font.pixelSize: 24
                 font.bold: true
             }
 
             Text {
                 id: longitude
-                x: 190
+                x: 165
                 y: 18
                 color: "#ff0000"
-                text: "000.000"
+                text: siteLongitude
                 font.pixelSize: 24
                 font.bold: true
             }
 
             Text {
                 id: latidude
-                x: 168
+                x: 150
                 y: 50
                 color: "#ff0000"
-                text: "00.00"
+                text: siteLatitude
                 font.pixelSize: 24
                 font.bold: true
             }
 
             Text {
                 id: time_zone
-                x: 195
+                x: 165
                 y: 83
                 color: "#ff0000"
-                text: "7"
+                text: timeZone
                 font.pixelSize: 24
                 font.bold: true
             }
@@ -275,7 +281,7 @@ ApplicationWindow {
                 x: 192
                 y: 18
                 color: "#ff0000"
-                text: "000.00"
+                text: currAz
                 font.pixelSize: 24
                 font.bold: true
             }
@@ -285,7 +291,7 @@ ApplicationWindow {
                 x: 207
                 y: 50
                 color: "#ff0000"
-                text: "00.00"
+                text: currEl
                 font.pixelSize: 24
                 font.bold: true
             }

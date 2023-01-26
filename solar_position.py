@@ -57,14 +57,17 @@ class SolarPosition:
         self.x_lat = x_lat
         self.x_long = x_long
         self.time_zone = time_zone
+        self.SUNAZ = 0
+        self.SUNEL = 0
+        self.universal_time = 0
         
         self.dr: int = 0.017453292
         
-        self.define_all_parameters
+        self.define_all_parameters()
     
     def get_universal_time(self) -> None:
         
-        self.universal_time: float = (self.hour * 3600) + (self.minute * 60) + self.second
+        self.universal_time: float = (int(self.hour) * 3600) + (int(self.minute) * 60) + int(self.second)
         self.universal_time = (self.universal_time / 3600.0) - self.time_zone
         
     def get_num_days_in_year(self) -> int:
@@ -94,8 +97,8 @@ class SolarPosition:
     
     def define_all_parameters(self) -> None:
         
-        self.get_universal_time
-        num_days: int = self.get_num_days_in_year
+        self.get_universal_time()
+        num_days: int = self.get_num_days_in_year()
         
         # Day angle (Jan 1 = 0 deg, goes to 360)
         d_angle = (360.0 * (num_days - 1)) / 365.0
@@ -157,7 +160,7 @@ class SolarPosition:
         # Rascen is the right ascension (of the sun)
         top = np.cos(obl_ecl * self.dr) * np.sin(ec_long * self.dr)
         bottom = np.cos(ec_long * self.dr)
-        ra_scen = np.arctan2(top / bottom) / self.dr
+        ra_scen = np.arctan2(top, bottom) / self.dr
         if (ra_scen < 0.0):
             ra_scen += 360.0
             
