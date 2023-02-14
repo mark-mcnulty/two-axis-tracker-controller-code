@@ -1,27 +1,31 @@
 void encoderISR();
-int counter = 0;
-int currentStateSig;
-int previousStateSig;
-
+double cntsToDeg(int);
+volatile int counter;
+int countsPerRevolution;
+#define PIN PK_1
 
 void setup() {
-  pinMode(SIGNAL_PIN, INPUT); 
-  attachInterrupt(INTERRUPT_PIN, encoderISR, CHANGE);
-  previousStateA = digitalRead(SIGNAL_PIN);
+  pinMode(PIN, INPUT); 
+  attachInterrupt(digitalPinToInterrupt(PIN), encoderISR, FALLING);
   Serial.begin(9600);
+  counter = 0;
+  countsPerRevolution = ;
 }
 
 void loop() {
-  Serial.println(counter);
+  double degreeCounts = cntsToDeg(counter);
+  Serial.print(counter);
+  Serial.print("      ");
+  Serial.println(degreeCounts);  
 }
 
 
-void encoderISR(){
-  
-  currentStateSig = digitalRead(SIGNAL_PIN);
-  
-  if (currentStateSig != previousStateSig) {
-    counter++;
-    }
-    previousStateSig = currentStateSig;
-  }
+void encoderISR() {
+  counter++;
+}
+
+
+double cntsToDeg(int counts) {
+  double degreeCounts;
+  return degreeCounts = ((double)counts/(double)countsPerRevolution)*360;
+}
