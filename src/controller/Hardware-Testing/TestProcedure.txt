@@ -1,0 +1,60 @@
+Limit Switches act as a switch? Put 3.3V on one end and when hit will send 3.3V to the GPIO pin?
+	Must verify
+Test Hall Sensor with H7 GPIO pin and level shifter
+	Must verify
+Test Speed Controllers with Mains relay, direction relay, and speed pot
+	Must verify
+
+Test Procedure:
+	Determine the functionality of the limit switch
+	Determine limit switch voltage level and pinouts for wiring
+	Test level shifter voltage output with input
+	Write test program on H7 to track hall sensor data
+	Verify hall sensor pinout and wiring
+	Write test program on H7 to control speed controller inputs
+	Verify speed controller functionality with motor - mains, speed, direction
+
+
+Limit Switch Pinout:
+Black&White for 1&2 lines are NC, Pink&Blue are NO
+
+Starting from line 1, ending with line 3
+1- Line 1- Blue ---- NO Switch 
+2- Line 1- Pink ---- NO Switch
+3- Line 1- Chassis ---- GND?? 
+4- Line 2- Blue ---- NO Switch 
+5- Line 2- Pink ---- NO Switch
+6- Line 2- Chassis ---- GND?? 
+7- Line 1- Black ---- NC Switch
+8- Line 1- White ---- NC Switch
+9- Line 2- Black ---- NC Switch
+10- Line 2- White ---- NC Switch
+11- Line 3- Blue ---- Pin 3 on connector with Blue GND wire
+12- Line 3- Pink ---- Pin 1 on connector with Blue GND wire
+13- Line 3- White --- Pin 2 on connector with Blue GND wire
+14- Line 3- Black --- Blue GND wire from connector
+15- Line 3- Chassis --- GND???
+Connector without Blue GND wire:
+	Red- Pin 2 connector without GND
+	White- Pin 3 connector without GND
+	Chassis- Pin 1 connector without GND
+
+Level Shifter Pinout:
+LV Side (3.3V):
+LV-
+A1-
+A2-
+A3-
+A4-
+0E-
+HV Side (5V):
+HV-
+B1-
+B2-
+B3-
+B4-
+GND-
+
+VCCa and VCCb both need input power for reference
+Input 5V on high side, output cooresponding low side ---> 3.3V for high, 1.45V for low
+	Possible to adjust low voltage threshold in the code???
