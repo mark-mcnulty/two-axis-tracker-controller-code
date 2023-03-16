@@ -1,0 +1,14 @@
+{
+	"states": [
+	{
+		"state": "stow",
+		"stopped": true,
+		"position": 0
+	},
+	{
+		"state": "GOTO",
+		"stopped": true,
+		"position": 200
+	}
+	]
+}
