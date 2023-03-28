@@ -1,0 +1,55 @@
+TaskHandle_t Task1;
+TaskHandle_t Task2;
+
+SemaphoreHandle_t batton;
+
+void codeForTask1(void * parameter){
+  for(;;){
+    xSemaphoreTake(batton, portMAX_DELAY);
+    //Serial.print("Task 1 code running on: ");
+    Serial.println("Now running core 1 on esp");
+    Serial.println("");
+    xSemaphoreGive(batton);
+    delay(1000);
+    }
+  }
+
+void codeForTask2(void * parameter){
+  for(;;){
+    xSemaphoreTake(batton,portMAX_DELAY);
+    Serial.println("Now running core 0 on esp");
+    Serial.println("");
+    //Serial.print("Task 2 code running on: ");
+    xSemaphoreGive(batton);
+    delay(1000);
+    }
+  }
+
+void setup(){
+  Serial.begin(115200);
+
+  batton = xSemaphoreCreateMutex();
+  
+  xTaskCreatePinnedToCore(
+    codeForTask1,
+    "Task1",
+    1000,
+    NULL,
+    1,
+    &Task1,
+    1);
+   xTaskCreatePinnedToCore(
+    codeForTask2,
+    "Task1",
+    1000,
+    NULL,
+    1,
+    &Task1,
+    0);
+  
+  }
+
+void loop() {
+ delay(1000);
+}
+
