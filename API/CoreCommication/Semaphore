@@ -3,12 +3,18 @@ TaskHandle_t Task2;
 
 SemaphoreHandle_t batton;
 
+int globalVal;
+
 void codeForTask1(void * parameter){
   for(;;){
     xSemaphoreTake(batton, portMAX_DELAY);
-    //Serial.print("Task 1 code running on: ");
-    Serial.println("Now running core 1 on esp");
+    Serial.print("Task 1 code running on core: ");
+    Serial.print(xPortGetCoreID());
     Serial.println("");
+    Serial.println("value passsed: ");
+    Serial.print(globalVal);
+    Serial.println("");
+    globalVal = 21;
     xSemaphoreGive(batton);
     delay(1000);
     }
@@ -17,9 +23,13 @@ void codeForTask1(void * parameter){
 void codeForTask2(void * parameter){
   for(;;){
     xSemaphoreTake(batton,portMAX_DELAY);
-    Serial.println("Now running core 0 on esp");
+    Serial.print("Task 2 code running on: ");
+    Serial.print(xPortGetCoreID());
     Serial.println("");
-    //Serial.print("Task 2 code running on: ");
+    Serial.println("value passsed: ");
+    Serial.println(globalVal);
+    Serial.println("");
+    globalVal = 0;
     xSemaphoreGive(batton);
     delay(1000);
     }
@@ -46,10 +56,9 @@ void setup(){
     1,
     &Task1,
     0);
-  
+    globalVal = 10;
   }
 
 void loop() {
  delay(1000);
 }
-
