@@ -1,14 +1,14 @@
 void encoderISR();
 
-#define PIN PK_1    // pwm5
+#define ENCOD0 PC_7     // pwm2     // encoder0
 
 int counter = 0;
 
 
 
 void setup() {
-  pinMode(PIN, INPUT); 
-  attachInterrupt(PIN, encoderISR, FALLING);
+  pinMode(ENCOD0, INPUT); 
+  attachInterrupt(ENCOD0, encoderISR, CHANGE);
   Serial.begin(9600);
 }
 

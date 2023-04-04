@@ -1,0 +1,7 @@
+{
+    "configuration": "split=50_50,security=none",
+    "board": "arduino:mbed_portenta:envie_m7",
+    "programmer": "cmsis-dap",
+    "sketch": "src\\controller\\Hardware-Testing\\testing_motor_cls\\testing_motor_cls.ino",
+    "port": "COM10"
+}
