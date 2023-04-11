@@ -24,9 +24,6 @@ Motor::Motor() {
     pinMode(ENCOD0, INPUT);
     pinMode(END00, INPUT);
     pinMode(END01, INPUT);
-
-    // set up interrupts
-
 }
 
 void Motor::turnOn() {
@@ -93,7 +90,9 @@ void Motor::moveRelAng(float angle) {
     // angle is in degrees
 }
 
-// getters
+/*
+GETTERS
+*/
 float Motor::getAngleShaft() {
     return _angle_shaft;
 }
@@ -110,7 +109,9 @@ bool Motor::getOn() {
     return _on;
 }
 
-// setters
+/*
+SETTERS
+*/
 void Motor::setAngleShaft(float angle) {
     _angle_shaft = angle;
 }
@@ -122,5 +123,36 @@ void Motor::setAngleTracker(float angle) {
 void Motor::setOn(bool on) {
     _on = on;
 }
+
+
+/*
+ISRs
+*/
+void Motor::isrEncoder(){
+    // if the encoder gets triggered we need to update the count 
+    // based on the direction the motor is rotating
+    if (_dir == true) {
+        _counts++;
+    } else {
+        _counts--;
+    }
+}
+
+void Motor::isrEndstop00(){
+    // if the end-stop gets triggered we need to turn off the motor
+    turnOff();
+
+    // we then want to set the current position
+    // which will be the min position of the axis
+}
+
+void Motor::isrEndstop01(){
+    // if the end-stop gets triggered we need to turn off the motor
+    turnOff();
+
+    // we then want to set the current position
+    // which will be the max position of the axis
+}
+
 
 

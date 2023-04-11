@@ -56,6 +56,5 @@ class Motor {
         void isrEncoder();
         void isrEndstop00();
         void isrEndstop01();
-
 };
 #endif 

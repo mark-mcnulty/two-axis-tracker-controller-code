@@ -93,7 +93,9 @@ void Motor::moveRelAng(float angle) {
     // angle is in degrees
 }
 
-// getters
+/*
+GETTERS
+*/
 float Motor::getAngleShaft() {
     return _angle_shaft;
 }
@@ -110,7 +112,9 @@ bool Motor::getOn() {
     return _on;
 }
 
-// setters
+/*
+SETTERS
+*/
 void Motor::setAngleShaft(float angle) {
     _angle_shaft = angle;
 }
@@ -122,5 +126,22 @@ void Motor::setAngleTracker(float angle) {
 void Motor::setOn(bool on) {
     _on = on;
 }
+
+
+/*
+ISRs
+*/
+void Motor::isrEncoder(){
+
+}
+
+void Motor::isrEndstop00(){
+
+}
+
+void Motor::isrEndstop01(){
+    
+}
+
 
 

@@ -11,10 +11,6 @@ volatile int counts = 0;
 Motor motor = Motor();
 
 void setup() {
-  // put your setup code here, to run once:
-  pinMode(PIN, OUTPUT);
-  digitalWrite(PIN, LOW);
-
   attachInterrupt(ENCOD0, isrEncoder, RISING);
 
   Serial.begin(9600);

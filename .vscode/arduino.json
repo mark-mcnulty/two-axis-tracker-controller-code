@@ -2,6 +2,6 @@
     "configuration": "split=50_50,security=none",
     "board": "arduino:mbed_portenta:envie_m7",
     "programmer": "cmsis-dap",
-    "sketch": "src\\controller\\Hardware-Testing\\testing_motor_cls\\testing_motor_cls.ino",
+    "sketch": "src\\controller\\Hardware-Testing\\movement_con\\movement_con.ino",
     "port": "COM10"
 }
