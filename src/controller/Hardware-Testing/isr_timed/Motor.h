@@ -29,9 +29,6 @@ class Motor {
     public:
         // values
         int _counts;
-        float _time_last;
-        float _trigger_time;
-        float _wait_time;
         
         /// constructor
         Motor();

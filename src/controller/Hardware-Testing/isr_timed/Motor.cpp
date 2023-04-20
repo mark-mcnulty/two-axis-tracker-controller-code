@@ -5,9 +5,6 @@ Motor::Motor() {
     // fsm state 
     _state = State::WAIT;
     // constructor 
-    _time_last = 0;
-    _trigger_time = 0
-    _wait_time = 35;
     _counts_per_rev = 10;                           
     _gear_ratio = 1;                                
     _angle_per_count = 360.0 / _counts_per_rev;     
@@ -57,9 +54,6 @@ void Motor::setDirection(bool dir) {
     }
 }
 
-/*
-
-*/
 void Motor::moveAbsCount(int count) {
     // move to absolute count
     // count is in encoder counts    
@@ -139,17 +133,28 @@ ISRs
 void Motor::isrEncoder(){
     // if the encoder gets triggered we need to update the count 
     // based on the direction the motor is rotating
+    // if (_dir == true) {
+    //     _counts++;
+    // } else {
+    //     _counts--;
+    // }
     _counts++;
 }
 
 void Motor::isrEndstop00(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
+
+    // we then want to set the current position
+    // which will be the min position of the axis
 }
 
 void Motor::isrEndstop01(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
+
+    // we then want to set the current position
+    // which will be the max position of the axis
 }
 
 

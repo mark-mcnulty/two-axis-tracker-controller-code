@@ -10,6 +10,8 @@ enum class State {WAIT, GOTO};
 
 class Motor {
     private:
+        int _temp;
+        int _encode_last;
         // constants for motor
         int _counts_per_rev;
         int _counts_desired;      // mignt need to remove this lat
@@ -29,9 +31,6 @@ class Motor {
     public:
         // values
         int _counts;
-        float _time_last;
-        float _trigger_time;
-        float _wait_time;
         
         /// constructor
         Motor();
