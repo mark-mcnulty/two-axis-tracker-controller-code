@@ -6,7 +6,7 @@ Motor::Motor() {
     _state = State::WAIT;
     // constructor 
     _time_last = 0;
-    _trigger_time = 0
+    _trigger_time = 0;
     _wait_time = 35;
     _counts_per_rev = 10;                           
     _gear_ratio = 1;                                

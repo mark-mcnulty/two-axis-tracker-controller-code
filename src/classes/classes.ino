@@ -8,15 +8,10 @@ void isrEncoder();
 volatile int counts = 0;
 Motor motor = Motor();
 int negative = -1;
-int time_last = 0;
-int trigger_time = 0;
-int wait_time = 35;
 
 void setup() {
   // attach the interrupt service routines
   attachInterrupt(ENCOD0, isrEncoder, RISING);
-  attachInterrupt(END00, isrEndstop00, RISING);
-  attachInterrupt(END01, isrEndstop01, RISING);
 
   // start serial
   Serial.begin(9600);
@@ -24,14 +19,10 @@ void setup() {
 
 
 void loop() {
-  // move the motor
   motor.moveRelCount(10 * negative);
-
-  // wait for the motor to move
   delay(3000);
-
-  // change direction
   negative *= -1;
+  Serial.print(motor._counts);
 }
 
 
