@@ -5,9 +5,6 @@ Motor::Motor() {
     // fsm state 
     _state = State::WAIT;
     // constructor 
-    _time_last = 0;
-    _trigger_time = 0;
-    _wait_time = 35;
     _counts_per_rev = 10;                           
     _gear_ratio = 1;                                
     _angle_per_count = 360.0 / _counts_per_rev;     
@@ -29,6 +26,9 @@ Motor::Motor() {
     pinMode(ENCOD0, INPUT);
     pinMode(END00, INPUT);
     pinMode(END01, INPUT);
+
+    // read the current state of the encoder
+    _encode_last = digitalRead(ENCOD0);
 }
 
 void Motor::turnOn() {
@@ -57,9 +57,6 @@ void Motor::setDirection(bool dir) {
     }
 }
 
-/*
-
-*/
 void Motor::moveAbsCount(int count) {
     // move to absolute count
     // count is in encoder counts    
@@ -82,7 +79,15 @@ void Motor::moveRelCount(int desired) {
 
     turnOn();
     while(_counts <= desired){
-      Serial.println(_counts);
+      // keep reading the encoder
+        // if the encoder gets triggered we need to update the count
+        // based on the direction the motor is rotating
+        _temp = digitalRead(ENCOD0);
+        if (_temp != _encode_last) {
+            // add to the count
+            _counts += 1;
+            _encode_last = _temp;
+        }
     }
     turnOff();
 }
@@ -139,17 +144,28 @@ ISRs
 void Motor::isrEncoder(){
     // if the encoder gets triggered we need to update the count 
     // based on the direction the motor is rotating
+    // if (_dir == true) {
+    //     _counts++;
+    // } else {
+    //     _counts--;
+    // }
     _counts++;
 }
 
 void Motor::isrEndstop00(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
+
+    // we then want to set the current position
+    // which will be the min position of the axis
 }
 
 void Motor::isrEndstop01(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
+
+    // we then want to set the current position
+    // which will be the max position of the axis
 }
 
 
