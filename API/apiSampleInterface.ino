@@ -1,27 +1,26 @@
 // Variables and constants
+unsigned long previousMillis = 0; // For storing uptime
+const long INTERVAL = 5000;
+bool boolData = true;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("Solar Tracker User Interface");
-
+  Serial.println("Solar Tracker User Interface: Accepting Commands while Printing");
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  acceptCommand();
-}
-
-//Functions
-void acceptCommand() {
+  
   //List commands
   Serial.println("Avaible Commands");
   Serial.println("1: Go To");
   Serial.println("2: Stow");
-  Serial.println("3: Display Data");
+  Serial.println("3: Print Data");
   Serial.println("Enter the number you wish to select");
 
   //Wait until user inputs
+  //Prints Data if flag is true
   while (Serial.available() == 0) {
+    printData();
   }
 
   //Get input
@@ -47,9 +46,9 @@ void acceptCommand() {
 
     case 3:
       //Stow
-      Serial.println("Displaying current Solar Tracker Data");
+      Serial.println("Toggling Print Data");
       Serial.println();
-      printData();
+      togglePrintData();
       break;
 
     default:
@@ -65,6 +64,7 @@ void goTo() {
 
   //Wait until user inputs
   while (Serial.available() == 0) {
+    printData();
   }
 
   int elevation = Serial.parseInt();
@@ -73,85 +73,47 @@ void goTo() {
 
   //Wait until user inputs
   while (Serial.available() == 0) {
+    printData();
   }
 
   int azimuth = Serial.parseInt();
 
+  //Print back inputs
   Serial.print("You entered ");
   Serial.print(elevation);
   Serial.print(" for elevation and ");
   Serial.print(azimuth);
   Serial.println(" as azimuth");
 
-  //Later implement check to confirm
-
-  //Send to M7
-  checkRecieved();
-
-  //See if user wants to see data
-  choosePrintData();
 }
 
 void stow() {
-  checkRecieved();
-
-  //See if user wants to see data
-  choosePrintData();
+  //Send stuff to other core
+  Serial.print("STOW");
 }
 
-void printData() { 
-  checkRecieved();
+void togglePrintData() { 
+  boolData = !boolData;
+}
 
-  Serial.println("Press any key to stop data");
+//If boolData is true and it is time, print data to serial
+void printData() {
+  //Get current time
+  unsigned long currentMillis = millis(); 
 
-  while (Serial.available() == 0) {
-    //Get data from M7
+  if (boolData && (currentMillis - previousMillis >= INTERVAL)) {
+
+    //Update time
+    previousMillis = currentMillis;
+
     //Print data
-    Serial.print("Date: foo, ");
-    Serial.print("Time: foo, ");
-    Serial.print("Elevation: foo, ");
-    Serial.print("Azimuth: foo, ");
-    Serial.print("Position: foo, ");
-    Serial.println("Status: foo");
-
-    //Wait 1 second
-    //will replace with millis
-    delay(1000);
-  }
-  Serial.println();
-  
-  char temp = Serial.read();
-}
-
-//Checks if M7 recieved command and functions
-void checkRecieved() {
-  Serial.println("Your command was recieved by the Solar Tracker");
-}
-
-//Checks if user wants to see data now
-void choosePrintData() { 
-  Serial.println("Would you like to see the Solar Tracker data?");
-  Serial.println("Y = 1");
-  Serial.println("N = 2");
-
-  //Wait until user inputs
-  while (Serial.available() == 0) {
-  }
-
-  char seeData = Serial.parseInt();
-
-  switch (seeData) {
-    case 1:
-      printData();
-      break;
-
-    case 2:
-      
-      break;
-
-    default:
-      Serial.println("You did not choose a valid response, assuming no");
-      Serial.println();
+   Serial.print("Date: foo, ");
+   Serial.print("Time: foo, ");
+   Serial.print("Elevation: foo, ");
+   Serial.print("Azimuth: foo, ");
+   Serial.print("Position: foo, ");
+   Serial.println("Status: foo");
+   Serial.println();
   }
 }
 
