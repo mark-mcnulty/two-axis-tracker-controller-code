@@ -19,10 +19,10 @@ void setup() {
 
 
 void loop() {
-  motor.moveRelCount(10 * negative);
+  motor.moveRelCount(20 * negative);
   delay(3000);
   negative *= -1;
-  Serial.print(motor._counts);
+  Serial.println(motor._counts);
 }
 
 
