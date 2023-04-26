@@ -69,7 +69,7 @@ void loop() {
    //M4
    #ifdef CORE_CM4  
     //Checks if M4 can read global var
-    RPC.println("CORE 4 reading global variable " + String(myIntGlobal)); // DOES NOT WORK as only one serial connection?
+    RPC.println("CORE 4 reading global variable " + 1234); // DOES NOT WORK as only one serial connection?
 
     //Sets M4 var
      int m4Var = 2;  
@@ -83,9 +83,9 @@ void loop() {
    #ifdef CORE_CM7   
      Serial.println("---------------------------------");
      //Prints from M7 globaly defined variable
-     Serial.println("From M7 showing global variable: "+ String(myIntGlobal));
+     Serial.println("M7 Initial Variable: 1234");
      //Prints M7 local variable that was changed by M4 hopefully
-     Serial.println("From M7 showing changed variable: "+ String(m7IntGlobal));
+     Serial.println("From M4, showing changed M7 Variable: "+ String(m7IntGlobal));
 
     //Very confused by this part UNKNOWN
      while (RPC.available()) {
