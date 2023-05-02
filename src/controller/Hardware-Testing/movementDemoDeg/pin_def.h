@@ -20,7 +20,7 @@
 #define wrong PC_2C   //ADC A2     
 #define POWER1 PA_1C   //ADC A1     // power_relay1
 // #define POWER0 PA_0C   //ADC A0     // power_relay0
-#define POWER0 PA_6       // ADC A7 
+#define POWER0 PA_6
 #define D14 PA_9
 
 #endif 

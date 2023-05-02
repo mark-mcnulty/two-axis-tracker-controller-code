@@ -1,19 +1,42 @@
 #include "Motor.h"
 #include "Arduino.h"
 
-Motor::Motor() {
+Motor::Motor(String axis) {
+    // global values
+    _gear_ratio_Az = 102.28;
+    _gear_ratio_El = 102.03;  
+     
+    // setup based on axis
+    if(axis == "El"){
+      _gear_ratio = _gear_ratio_El;      
+      pinMode(POWER0, OUTPUT);
+      pinMode(DIR_REL00, OUTPUT);
+      pinMode(DIR_REL01, OUTPUT);
+      pinMode(ENCOD0, INPUT);
+      pinMode(END00, INPUT);
+      pinMode(END01, INPUT);
+    } else if (axis == "Az") {
+      _gear_ratio = _gear_ratio_Az;
+      pinMode(POWER1, OUTPUT);
+      pinMode(DIR_REL10, OUTPUT);
+      pinMode(DIR_REL11, OUTPUT);
+      pinMode(ENCOD1, INPUT);
+      pinMode(END10, INPUT);
+      pinMode(END11, INPUT);
+    } else {
+        Serial.println("ERROR: Axis not defined");
+    }
+
     // fsm state 
-    _state = State::WAIT;
+
     // constructor 
     _time_last = 0;
     _trigger_time = 0;
     _wait_time = 30;
-    _counts_per_rev = 10;    
-    _gear_ratio_Az = 102.28;
-    _gear_ratio_El = 102.03;                   
+    _counts_per_rev = 10;                    
     _gear_ratio = 1;                                
-    _angle_per_count = (360.0 / _gear_ratio_Az) / _counts_per_rev;     
-    _angle_per_rev = 360.0 / _gear_ratio_Az;           
+    _angle_per_count = (360.0 / _gear_ratio) / _counts_per_rev;     
+    _angle_per_rev = 360.0 / _gear_ratio;           
 
 
     // motor state values
@@ -23,15 +46,6 @@ Motor::Motor() {
     _dir = false;                                   // imma make CCW True and CW Flase
     _on = false;
     _moving = false;
-
-
-    // set up pins for one axis
-    pinMode(POWER0, OUTPUT);
-    pinMode(DIR_REL00, OUTPUT);
-    pinMode(DIR_REL01, OUTPUT);
-    pinMode(ENCOD0, INPUT);
-    pinMode(END00, INPUT);
-    pinMode(END01, INPUT);
 }
 
 void Motor::turnOn() {
@@ -180,20 +194,20 @@ void Motor::isrEndstop01(){
 }
 
 
-void Motor::handle_event() {
-    switch (_state) {
-        case State::WAIT:
-            if (_moving) {
-                _state = State::GOTO;
-            }
-            break;
-        case State::GOTO:
-            if (_counts >= _counts_desired) {
-                _moving = false;
-                _state = State::WAIT;
-            }
-            break;
-    }
-}
+// void Motor::handle_event() {
+//     switch (_state) {
+//         case State::WAIT:
+//             if (_moving) {
+//                 _state = State::GOTO;
+//             }
+//             break;
+//         case State::GOTO:
+//             if (_counts >= _counts_desired) {
+//                 _moving = false;
+//                 _state = State::WAIT;
+//             }
+//             break;
+//     }
+// }
 
 

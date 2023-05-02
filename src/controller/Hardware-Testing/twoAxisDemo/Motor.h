@@ -5,9 +5,6 @@
 #include "Arduino.h"
 #include "pin_def.h"
 
-// define the possible states of the moter
-enum class State {WAIT, GOTO};
-
 class Motor {
     private:
         // constants for motor
@@ -36,11 +33,10 @@ class Motor {
         float _wait_time;
         
         /// constructor
-        Motor();
+        Motor(String axis);
 
         // FSM
-        State _state;
-        void handle_event();
+        // void handle_event();
 
         // methods
         void turnOn();

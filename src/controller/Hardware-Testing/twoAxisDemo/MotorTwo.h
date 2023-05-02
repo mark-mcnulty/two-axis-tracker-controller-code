@@ -1,14 +1,12 @@
-#ifndef Motor_h
-#define Motor_h
+#ifndef MotorTwo_h
+#define MotorTwo_h
 
 
 #include "Arduino.h"
 #include "pin_def.h"
 
-// define the possible states of the moter
-enum class State {WAIT, GOTO};
 
-class Motor {
+class MotorTwo {
     private:
         // constants for motor
         int _counts_per_rev;
@@ -36,11 +34,10 @@ class Motor {
         float _wait_time;
         
         /// constructor
-        Motor();
+        MotorTwo(String axis);
 
         // FSM
-        State _state;
-        void handle_event();
+        // void handle_event();
 
         // methods
         void turnOn();

@@ -120,6 +120,7 @@ void Motor::moveAbsAngTracker(float angle) {
 void Motor::moveRelAngTracker(float angle) {
     // find the number of counts to move
     int desiredCount = (int) (angle / _angle_per_count);
+    Serial.println(desiredCount);
 
     // move to the desired count
     moveRelCount(desiredCount);

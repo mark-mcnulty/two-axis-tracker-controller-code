@@ -1,19 +1,42 @@
-#include "Motor.h"
+#include "MotorTwo.h"
 #include "Arduino.h"
 
-Motor::Motor() {
+MotorTwo::MotorTwo(String axis) {
+    // global values
+    _gear_ratio_Az = 102.28;
+    _gear_ratio_El = 102.03;  
+     
+    // setup based on axis
+    if(axis == "El"){
+      _gear_ratio = _gear_ratio_El;
+      pinMode(POWER0, OUTPUT);
+      pinMode(DIR_REL00, OUTPUT);
+      pinMode(DIR_REL01, OUTPUT);
+      pinMode(ENCOD0, INPUT);
+      pinMode(END00, INPUT);
+      pinMode(END01, INPUT);
+    } else if (axis == "Az") {
+      _gear_ratio = _gear_ratio_Az;
+      pinMode(POWER1, OUTPUT);
+      pinMode(DIR_REL10, OUTPUT);
+      pinMode(DIR_REL11, OUTPUT);
+      pinMode(ENCOD1, INPUT);
+      pinMode(END10, INPUT);
+      pinMode(END11, INPUT);
+    } else {
+        Serial.println("ERROR: Axis not defined");
+    }
+
     // fsm state 
-    _state = State::WAIT;
+
     // constructor 
     _time_last = 0;
     _trigger_time = 0;
     _wait_time = 30;
-    _counts_per_rev = 10;    
-    _gear_ratio_Az = 102.28;
-    _gear_ratio_El = 102.03;                   
+    _counts_per_rev = 10;                    
     _gear_ratio = 1;                                
-    _angle_per_count = (360.0 / _gear_ratio_Az) / _counts_per_rev;     
-    _angle_per_rev = 360.0 / _gear_ratio_Az;           
+    _angle_per_count = (360.0 / _gear_ratio) / _counts_per_rev;     
+    _angle_per_rev = 360.0 / _gear_ratio;           
 
 
     // motor state values
@@ -23,39 +46,30 @@ Motor::Motor() {
     _dir = false;                                   // imma make CCW True and CW Flase
     _on = false;
     _moving = false;
-
-
-    // set up pins for one axis
-    pinMode(POWER0, OUTPUT);
-    pinMode(DIR_REL00, OUTPUT);
-    pinMode(DIR_REL01, OUTPUT);
-    pinMode(ENCOD0, INPUT);
-    pinMode(END00, INPUT);
-    pinMode(END01, INPUT);
 }
 
-void Motor::turnOn() {
-    digitalWrite(POWER0, HIGH);
+void MotorTwo::turnOn() {
+    digitalWrite(POWER1, HIGH);
     _on = true;
 }
 
 
-void Motor::turnOff() {
-    digitalWrite(POWER0, LOW);
+void MotorTwo::turnOff() {
+    digitalWrite(POWER1, LOW);
     _on = false;
 }
 
 
 // I have to check this logic with the system
-void Motor::setDirection(bool dir) {
+void MotorTwo::setDirection(bool dir) {
     if (dir == false) {
-        digitalWrite(DIR_REL00, HIGH);
-        digitalWrite(DIR_REL01, LOW);
+        digitalWrite(DIR_REL10, HIGH);
+        digitalWrite(DIR_REL11, LOW);
         _dir = false;                   // check if this is CW
     }
     else if (dir == true) {
-        digitalWrite(DIR_REL00, LOW);
-        digitalWrite(DIR_REL01, HIGH);
+        digitalWrite(DIR_REL10, LOW);
+        digitalWrite(DIR_REL11, HIGH);
         _dir = true;                    // check if this is CCW
     }
 }
@@ -63,7 +77,7 @@ void Motor::setDirection(bool dir) {
 /*
 
 */
-void Motor::moveAbsCount(int abs_desired) {
+void MotorTwo::moveAbsCount(int abs_desired) {
     // figure out where we are relative to the desired count
     int desired = abs_desired - _total_counts;
 
@@ -71,7 +85,7 @@ void Motor::moveAbsCount(int abs_desired) {
     moveRelCount(desired);
 }
 
-void Motor::moveRelCount(int desired) {
+void MotorTwo::moveRelCount(int desired) {
     _counts = 0;
     _moving = true;
     _counts_desired = desired;
@@ -91,6 +105,7 @@ void Motor::moveRelCount(int desired) {
     // wait for the motor to get to the desired count
     while(_counts <= desired){
         delay(10);
+        // Serial.println("here");
     }
     
     // re-assign the total counts
@@ -100,24 +115,24 @@ void Motor::moveRelCount(int desired) {
     turnOff();
 }
 
-void Motor::moveAbsAng(float angle) {
+void MotorTwo::moveAbsAng(float angle) {
     // move to absolute angle
     // angle is in degrees
     // angl
 }
 
-void Motor::moveRelAng(float relAngle) {
+void MotorTwo::moveRelAng(float relAngle) {
     // find the number of counts to move
     // int desired = relAngle % _angle_per_count;      // we have to take the modulus of the angle to get actual because we can only go in multiples of the angle per count
 }
 
-void Motor::moveAbsAngTracker(float angle) {
+void MotorTwo::moveAbsAngTracker(float angle) {
     // move to absolute angle
     // angle is in degrees
     // angl
 }
 
-void Motor::moveRelAngTracker(float angle) {
+void MotorTwo::moveRelAngTracker(float angle) {
     // find the number of counts to move
     int desiredCount = (int) (angle / _angle_per_count);
 
@@ -128,34 +143,34 @@ void Motor::moveRelAngTracker(float angle) {
 /*
 GETTERS
 */
-float Motor::getAngleShaft() {
+float MotorTwo::getAngleShaft() {
     return _angle_shaft;
 }
 
-float Motor::getAngleTracker() {
+float MotorTwo::getAngleTracker() {
     return _angle_tracker;
 }
 
-bool Motor::getDirection() {
+bool MotorTwo::getDirection() {
     return _dir;
 }
 
-bool Motor::getOn() {
+bool MotorTwo::getOn() {
     return _on;
 }
 
 /*
 SETTERS
 */
-void Motor::setAngleShaft(float angle) {
+void MotorTwo::setAngleShaft(float angle) {
     _angle_shaft = angle;
 }
 
-void Motor::setAngleTracker(float angle) {
+void MotorTwo::setAngleTracker(float angle) {
     _angle_tracker = angle;
 }
 
-void Motor::setOn(bool on) {
+void MotorTwo::setOn(bool on) {
     _on = on;
 }
 
@@ -163,37 +178,37 @@ void Motor::setOn(bool on) {
 /*
 ISRs
 */
-void Motor::isrEncoder(){
+void MotorTwo::isrEncoder(){
     // if the encoder gets triggered we need to update the count 
     // based on the direction the motor is rotating
     _counts++;
 }
 
-void Motor::isrEndstop00(){
+void MotorTwo::isrEndstop00(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
 }
 
-void Motor::isrEndstop01(){
+void MotorTwo::isrEndstop01(){
     // if the end-stop gets triggered we need to turn off the motor
     turnOff();
 }
 
 
-void Motor::handle_event() {
-    switch (_state) {
-        case State::WAIT:
-            if (_moving) {
-                _state = State::GOTO;
-            }
-            break;
-        case State::GOTO:
-            if (_counts >= _counts_desired) {
-                _moving = false;
-                _state = State::WAIT;
-            }
-            break;
-    }
-}
+// void MotorTwo::handle_event() {
+//     switch (_state) {
+//         case State::WAIT:
+//             if (_moving) {
+//                 _state = State::GOTO;
+//             }
+//             break;
+//         case State::GOTO:
+//             if (_counts >= _counts_desired) {
+//                 _moving = false;
+//                 _state = State::WAIT;
+//             }
+//             break;
+//     }
+// }
 
 

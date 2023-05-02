@@ -35,9 +35,10 @@ void loop() {
   if (isInteger(userInput)) {
     // convert the input to an integer
     int numInput = userInput.toInt();
+    Serial.println("moving");
 
     // move the motor to the inputted number of counts
-    motor.moveRelCount(numInput);
+    motor.moveRelCount(-numInput);
   } else {
     // tell the user that they did not input an integer
     Serial.println("You did not input an integer");
