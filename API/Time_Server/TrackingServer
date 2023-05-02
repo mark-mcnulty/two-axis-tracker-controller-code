@@ -1,3 +1,8 @@
+/*
+Code to implement NIST time server with respect to the Portenta Microcontroller. Code is currently configrued to WiFi, future 
+implementation can be configured via Ethernet
+*/ 
+
 #include <WiFi.h>
 #include "time.h"
 
