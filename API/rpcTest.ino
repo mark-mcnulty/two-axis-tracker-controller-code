@@ -1,28 +1,6 @@
+/*Code to Communicate between two cores in the Portenta H7. #ifdef statmenets are assigned to each core
+Purpose for furture implementation is to tranfer data from our hardware code to the interface code
 /*
- * my02-Dual-Core for the Portenta H7
- *
- * This code can be loaded on either core.
- * The M7 core will initialize the M4 core
- * The M7 will flash Blue randomly (under 6 seconds)
- * The M7 core will serial print its own messges
- * The M7 core will serial print messages it receives from the M4 core
- * The M7 core will continuously print the "myIntGlobal" variable
- *
- * Note: The M4 core will not compile unless -fexceptions is added 
- * to the bottom of the files: 
- * cflags.txt
- * cxxflags.txt 
- * at
- * C:\Users\<USER>\AppData\Local\Arduino15\packages\arduino-beta\hardware\mbed\1.2.2\variants\PORTENTA_H7_M4
- *
- * Note: AppData is hidden so find it directly
- * 
- * updated August 2nd, 2020
- * by Jeremy Ellis
- * Twitter @rocksetta
- * Website https://www.rocksetta.com
- *
-*/
 
 //Global
 #include "RPC.h"  
