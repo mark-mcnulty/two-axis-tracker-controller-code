@@ -1,3 +1,6 @@
+/*
+Constructed code to simulate blinking LED on two separate cores for H7 using the Micropython language
+*/ 
 import _thread
 import machine
 
