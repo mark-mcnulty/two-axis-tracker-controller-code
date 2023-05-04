@@ -1,4 +1,4 @@
-
+#structure designed for furutre Python developement of API communication creates a class with a HTTP server and uses ctypes library
 from ctypes.wintypes import BYTE
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
