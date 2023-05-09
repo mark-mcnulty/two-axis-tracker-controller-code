@@ -12,7 +12,7 @@ of the project. The point of this repository is to compile all the working code 
 ## USAGE
 To use this repository, you will need to clone it to your local machine. <br>
 ```
-git clone
+git clone https://github.com/mark-mcnulty/two-axis-tracker-controller-code.git
 ```
 You will also have to install the arduino IDE. as well as the Portenta H7 manager. <br>
 - https://docs.arduino.cc/tutorials/portenta-h7/setting-up-portenta
