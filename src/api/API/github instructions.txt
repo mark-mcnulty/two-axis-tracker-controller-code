@@ -1,0 +1,7 @@
+1) cd (change directory to desired folder)
+2) git clone [github repository URL]
+3) git branch (check if branch is found)
+4) git branch -c [branch name] (creates branch)
+5) git checkout [branch name] (moves to the created branch) *note* bunch of changes: "git add ."
+6) git commit -m [message]
+7) git push origin head
