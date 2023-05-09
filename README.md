@@ -9,3 +9,10 @@ of the project. The point of this repository is to compile all the working code 
 - ./src/api: This folder will host all the code for the API. <br>
 - ./src/gui: This folder will host all the code for the GUI.<br>
 - ./src/controller: This folder will host all the code for the controller.<br>
+## USAGE
+To use this repository, you will need to clone it to your local machine. <br>
+```
+git clone
+```
+You will also have to install the arduino IDE. as well as the Portenta H7 manager. <br>
+- https://docs.arduino.cc/tutorials/portenta-h7/setting-up-portenta
