@@ -16,3 +16,9 @@ git clone https://github.com/mark-mcnulty/two-axis-tracker-controller-code.git
 ```
 You will also have to install the arduino IDE. as well as the Portenta H7 manager. <br>
 - https://docs.arduino.cc/tutorials/portenta-h7/setting-up-portenta
+
+### GUI: 
+https://github.com/zsteenson/GUI-two-axis-tracker-controller.git
+
+translated functions:
+src\controller\src\classes\Tracker.cpp

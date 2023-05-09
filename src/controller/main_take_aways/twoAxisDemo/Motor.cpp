@@ -43,7 +43,6 @@ Motor::Motor(String axis) {
     }
 
     // fsm state 
-
     _time_last = 0;
     _trigger_time = 0;
     _wait_time = 30;
@@ -54,6 +53,7 @@ Motor::Motor(String axis) {
 
 
     // motor state values
+    // position you moved from the start. 
     _total_counts = 0;
     _angle_shaft = 0.0;
     _angle_tracker = 0.0;
