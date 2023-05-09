@@ -22,6 +22,8 @@ void Tracker::turnOff() {
     digitalWrite(POWER0, LOW);
 }
 
+
+
 void Tracker::trackSun() {
     if (PCOUNT >= 0) {
         pChk2(HCOUNT, PCOUNT, P1, P2, ERR);
@@ -35,7 +37,7 @@ void Tracker::trackSun() {
     return;
 }
 
-void Tracker::coordHeli{
+void Tracker::coordHeli(){
 		if(PCOUNT == 4){
 			int IP1 = -1;
 			if(abs(P1) < 32767){
@@ -52,24 +54,24 @@ void Tracker::coordHeli{
 }
 
 void Tracker::pChk2(int HCOUNT, int &PCOUNT, float &P1, float &P2, int &ERR) {
-    if (PCOUNT == 0) {
-        P1 = 1.0;
-        P2 = HCOUNT;
-        PCOUNT = 2;
+        if (PCOUNT == 0) {
+            P1 = 1.0;
+            P2 = HCOUNT;
+            PCOUNT = 2;
+        }
+
+        if (PCOUNT == 1) {
+            P2 = P1;
+            PCOUNT = 2;
+        }
+
+        ERR = 0;
+
+        if (PCOUNT != 2)       ERR = 1;
+        if (P1 < 1.0)          ERR = 2;
+        if (P1 > HCOUNT)       ERR = 3;
+        if (P2 < 1.0)          ERR = 4;
+        if (P2 > HCOUNT)       ERR = 5;
+        if (P1 > P2)           ERR = 6;
     }
-
-    if (PCOUNT == 1) {
-        P2 = P1;
-        PCOUNT = 2;
-    }
-
-    ERR = 0;
-
-    if (PCOUNT != 2)       ERR = 1;
-    if (P1 < 1.0)          ERR = 2;
-    if (P1 > HCOUNT)       ERR = 3;
-    if (P2 < 1.0)          ERR = 4;
-    if (P2 > HCOUNT)       ERR = 5;
-    if (P1 > P2)           ERR = 6;
-}
 }
