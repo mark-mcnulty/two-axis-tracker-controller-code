@@ -1,11 +1,12 @@
-#ifndef Motor_h
-#define Motor_h
+#ifndef MotorTwo_h
+#define MotorTwo_h
 
 
 #include "Arduino.h"
 #include "pin_def.h"
 
-class Motor {
+
+class MotorTwo {
     private:
         // constants for motor
         int _counts_per_rev;
@@ -33,7 +34,7 @@ class Motor {
         float _wait_time;
         
         /// constructor
-        Motor(String axis);
+        MotorTwo(String axis);
 
         // FSM
         // void handle_event();
