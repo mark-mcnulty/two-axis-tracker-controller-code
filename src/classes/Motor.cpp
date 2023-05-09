@@ -134,6 +134,13 @@ moveAbsCount(int abs_desired)
 
 parameters:
     abs_desired: the absolute count to move the motor to.
+
+returns:
+    none
+
+description:
+    This function will move the motor to the absolute count. This is the count from the beginning of the program.
+    the count at the beginning of the program is 0. So if you move 100 counts and then say moveAbsCount(0) it will move the motor back to the home position.
 */
 void Motor::moveAbsCount(int abs_desired) {
     // figure out where we are relative to the desired count
@@ -143,6 +150,21 @@ void Motor::moveAbsCount(int abs_desired) {
     moveRelCount(desired);
 }
 
+/*
+moveRelCount(int desired)
+
+parameters:
+    desired: the relative count to move the motor to based on current location. 
+
+returns:
+    none
+
+description:  
+    This function will move the motor to the count position relative to its current position. so if you are at 100 counts and you say moveRelCount(-10) it will move the motor to 90 counts from the beginning of the program.
+    Or anther way of thinking about it is if you call moveRelCount(10) it will move the motor 10 counts from its current position.
+    This is the main function that you will be dealing with. All the other functions can be derived from this one and if you look at the other 
+    movement functions you can see that I use this function a lot. This is the bread and butter function of movement.  
+*/
 void Motor::moveRelCount(int desired) {
     _counts = 0;
     _moving = true;
@@ -175,6 +197,51 @@ void Motor::moveRelCount(int desired) {
 
     // turn off the motor
     turnOff();
+}
+// doesn't keep track of the rounded number
+/*
+moveRelAngTracker(float angle)
+
+parameters:
+    angle: This is the angle you want to move the tracker itself. this should take into account the gear ratio.
+
+returns:
+    none
+
+description:
+    This moves the tracker to the relative angle that is inputted. This will move the tracker the amount of degrees inputted.
+    from its current location.
+
+NOTES: 
+    This still needs to take into account the amount of degrees that the inputted number has been rounded. If the angle inputted is not a multiple of the 
+    gear ratio and the counts per rev then the tracker will not move the correct amount of degrees and will round to the nearest multiple of the gear ratio
+    thus loosing by the amount that was rounded. 
+*/
+void Motor::moveRelAngTracker(float angle) {
+    // find the number of counts to move
+    int desiredCount = (int) (angle / _angle_per_count);
+
+    // move to the desired count
+    moveRelCount(desiredCount);
+}
+
+/*
+moveAbsAngTracker(float angle)
+
+parameters:
+    angle: This is the angle you want to move the tracker itself. this should take into account the gear ratio. 
+
+returns: 
+    none
+
+description:
+    this will move the tracker to the absolute angle that is inputted. This will move the tracker the amount of degrees inputted.
+    from the beginning of the program. So if you currently are at 50deg az or el and you say go to 30 deg az or el it will move the tracker to 30 deg az or el.
+*/
+void Motor::moveAbsAngTracker(float angle) {
+    // move to absolute angle
+    // angle is in degrees
+    // angl
 }
 
 //NEEDS WORK
@@ -223,38 +290,9 @@ void Motor::moveRelAng(float relAngle) {
     // int desired = relAngle % _angle_per_count;      // we have to take the modulus of the angle to get actual because we can only go in multiples of the angle per count
 }
 
-void Motor::moveAbsAngTracker(float angle) {
-    // move to absolute angle
-    // angle is in degrees
-    // angl
-}
 
-// doesn't keep track of the rounded number
-/*
-moveRelAngTracker(float angle)
 
-parameters:
-    angle: This is the angle you want to move the tracker itself. this should take into account the gear ratio.
 
-returns:
-    none
-
-description:
-    This moves the tracker to the relative angle that is inputted. This will move the tracker the amount of degrees inputted.
-    from its current location.
-
-NOTES: 
-    This still needs to take into account the amount of degrees that the inputted number has been rounded. If the angle inputted is not a multiple of the 
-    gear ratio and the counts per rev then the tracker will not move the correct amount of degrees and will round to the nearest multiple of the gear ratio
-    thus loosing by the amount that was rounded.  
-*/
-void Motor::moveRelAngTracker(float angle) {
-    // find the number of counts to move
-    int desiredCount = (int) (angle / _angle_per_count);
-
-    // move to the desired count
-    moveRelCount(desiredCount);
-}
 
 /*
 GETTERS

@@ -663,7 +663,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="WGLzp8_r7YFA2hb1r1Xt" name="Schematic">
-        <mxGraphModel dx="4053" dy="1622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="3982" dy="1587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -904,7 +904,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-6" value="Portenta GND&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="48.75" y="1055" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-7" value="Portenta PWM3&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-7" value="Portenta PWM3&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF33;" parent="1" vertex="1">
                     <mxGeometry x="48.75" y="1011.25" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-8" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="PZUwl_683Jto5E59ip0B-1" target="HboTqR8h9WotObu5s-Ue-7" edge="1">
@@ -933,7 +933,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-10" value="Direction Relay 1 (2 +)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-10" value="Direction Relay 1 (2 +)" style="text;strokeColor=none;align=center;fillColor=#FFFF33;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="600" width="130" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0.999;exitY=0.369;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-10" edge="1">
@@ -978,7 +978,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-16" value="Portenta PWM4&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-16" value="Portenta PWM4&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF33;" parent="1" vertex="1">
                     <mxGeometry x="-866.25" y="900" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-17" value="Portenta GND&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -996,7 +996,7 @@
                         <mxPoint x="-791.25" y="950" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-21" value="Mains Relay 1 (Input 4)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-21" value="Mains Relay 1 (Input 4)" style="text;strokeColor=none;align=center;fillColor=#FFFF33;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="620" width="130" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-22" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.382;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-21" edge="1">
@@ -1008,7 +1008,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-23" value="Portenta VCC&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-528.75" y="1032.5" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-24" value="Portenta GPIO 2&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-24" value="Portenta GPIO 2&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF33;" parent="1" vertex="1">
                     <mxGeometry x="-528.75" y="1075" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-25" value="" style="endArrow=none;html=1;rounded=0;exitX=1.003;exitY=0.088;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="VhLDoW2Cr6jkd59TBZYC-1" target="HboTqR8h9WotObu5s-Ue-23" edge="1">
@@ -1023,7 +1023,7 @@
                         <mxPoint x="-531.25" y="1090" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-27" value="Limit Switch 1 Line 1 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-27" value="Limit Switch 1 Line 1 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=#FFFF66;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="1160" width="180" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-28" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.776;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-27" edge="1">
@@ -1035,7 +1035,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-29" value="Portenta VCC&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-528.59" y="1165" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-30" value="Portenta GPIO 3" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-30" value="Portenta GPIO 3" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF33;" parent="1" vertex="1">
                     <mxGeometry x="-528.59" y="1207.5" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-31" value="" style="endArrow=none;html=1;rounded=0;exitX=1.003;exitY=0.088;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="HboTqR8h9WotObu5s-Ue-29" edge="1">
@@ -1050,7 +1050,7 @@
                         <mxPoint x="-531.09" y="1222.5" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-33" value="Limit Switch 1 Line 2 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-33" value="Limit Switch 1 Line 2 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=#FFFF66;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="1177.5" width="180" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-34" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.789;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-33" edge="1">
@@ -1317,7 +1317,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-95" value="Portenta GND&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="65" y="395" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-96" value="Portenta PWM1&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-96" value="Portenta PWM1&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF33;" parent="1" vertex="1">
                     <mxGeometry x="65" y="351.25" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-97" value="" style="endArrow=none;html=1;fontSize=14;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HboTqR8h9WotObu5s-Ue-76" target="HboTqR8h9WotObu5s-Ue-96" edge="1">
@@ -1403,7 +1403,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-106" value="Portenta VCC&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-512.5" y="372.5" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-107" value="Portenta GPIO 0&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-107" value="Portenta GPIO 0&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF66;" parent="1" vertex="1">
                     <mxGeometry x="-512.5" y="415" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-108" value="" style="endArrow=none;html=1;rounded=0;exitX=1.003;exitY=0.088;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="HboTqR8h9WotObu5s-Ue-69" target="HboTqR8h9WotObu5s-Ue-106" edge="1">
@@ -1421,7 +1421,7 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-110" value="Portenta VCC&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="-512.34" y="505" width="50" height="32.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-111" value="Portenta GPIO 1&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-111" value="Portenta GPIO 1&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#FFFF00;" parent="1" vertex="1">
                     <mxGeometry x="-512.34" y="547.5" width="50" height="32.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-112" value="" style="endArrow=none;html=1;rounded=0;exitX=1.003;exitY=0.088;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="HboTqR8h9WotObu5s-Ue-110" edge="1">
@@ -1484,10 +1484,10 @@
                 <mxCell id="HboTqR8h9WotObu5s-Ue-118" value="See Appendix A" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="-595" y="172.5" width="65" height="47.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-119" value="Direction Relay 2 (2 +)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-119" value="Direction Relay 2 (2 +)" style="text;strokeColor=none;align=center;fillColor=#FFFF33;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="640" width="130" height="15" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-120" value="Mains Relay 2 (Input 4)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-120" value="Mains Relay 2 (Input 4)" style="text;strokeColor=none;align=center;fillColor=#FFFF33;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="655" width="130" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-121" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.395;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-119" edge="1">
@@ -1502,10 +1502,10 @@
                         <mxPoint x="760" y="630" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-123" value="Limit Switch 2 Line 1 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-123" value="Limit Switch 2 Line 1 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=#FFFF66;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="1192.5" width="180" height="15" as="geometry"/>
                 </mxCell>
-                <mxCell id="HboTqR8h9WotObu5s-Ue-124" value="Limit Switch 2 Line 2 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                <mxCell id="HboTqR8h9WotObu5s-Ue-124" value="Limit Switch 2 Line 2 (NO Circuit)" style="text;strokeColor=none;align=center;fillColor=#FFFF66;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="670" y="1207.5" width="180" height="15" as="geometry"/>
                 </mxCell>
                 <mxCell id="HboTqR8h9WotObu5s-Ue-125" value="" style="endArrow=none;html=1;rounded=0;exitX=1.001;exitY=0.802;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="HboTqR8h9WotObu5s-Ue-123" edge="1">
@@ -1520,10 +1520,10 @@
                         <mxPoint x="770" y="1190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="E94AMNs2u4bNHzFZuqjt-22" value="Hall Sensor Sig 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="E94AMNs2u4bNHzFZuqjt-22" value="Hall Sensor Sig 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#FFFF66;" parent="1" vertex="1">
                     <mxGeometry x="660" y="1272.5" width="120" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="E94AMNs2u4bNHzFZuqjt-23" value="Hall Sensor Sig 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="E94AMNs2u4bNHzFZuqjt-23" value="Hall Sensor Sig 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#FFFF66;" parent="1" vertex="1">
                     <mxGeometry x="660" y="1292.5" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="E94AMNs2u4bNHzFZuqjt-24" value="" style="endArrow=none;html=1;rounded=0;entryX=0.042;entryY=0.433;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.013;exitY=0.866;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="1uVyMPZjJHyEK3T2pr2r-1" target="E94AMNs2u4bNHzFZuqjt-22" edge="1">
@@ -1791,7 +1791,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="Er9_XWSQwKM0xDENj2yy" name="one axis">
-        <mxGraphModel dx="3412" dy="973" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2952" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
